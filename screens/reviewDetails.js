@@ -1,17 +1,15 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
+import { globalStyles } from "../styles/global";
 
-export default function ReviewDetails() {
+export default function ReviewDetails({ navigation }) {
+
     return (
-        <View style={styles.container}>
-            <Text>Review Details Screen</Text>
+        <View style={globalStyles.container}>
+            <Text>{ navigation.getParam('title') }</Text>
+            <Text>{ navigation.getParam('body') }</Text>
+            <Text>{ navigation.getParam('rating') }</Text>
         </View>
     )
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-        padding: 24
-    }
-})
